@@ -1,0 +1,62 @@
+============================================================
+FAILED LOGIN DETECTION REPORT
+============================================================
+
+SUMMARY
+------------------------------------------------------------
+Total login records:       28
+Valid records analyzed:    24
+Malformed records skipped: 4
+Successful logins:         3
+Total failed attempts:     21
+IPs with failed attempts:  6
+Total IPs flagged:         3
+
+DETECTION RULES
+------------------------------------------------------------
+Rule 1 - Repeated failed logins: 5 or more failed attempts from one IP.
+Rule 2 - Multiple usernames: failed attempts against 3 or more
+         different usernames from one IP.
+
+FLAGGED IP ADDRESSES
+------------------------------------------------------------
+WARNING: 198.51.100.77
+  Failed attempts:  3
+  Unique usernames: 3 (admin, guest, root)
+  Reason(s):        Multiple usernames targeted
+
+WARNING: 203.0.113.25
+  Failed attempts:  5
+  Unique usernames: 1 (admin)
+  Reason(s):        Repeated failed logins
+
+WARNING: 203.0.113.200
+  Failed attempts:  6
+  Unique usernames: 4 (admin, oracle, root, test)
+  Reason(s):        Repeated failed logins; Multiple usernames targeted
+
+IPs WITH FAILED ATTEMPTS BUT NOT FLAGGED
+------------------------------------------------------------
+192.0.2.50: 2 failed attempt(s), 2 unique username(s)
+198.51.100.14: 1 failed attempt(s), 1 unique username(s)
+203.0.113.90: 4 failed attempt(s), 1 unique username(s)
+
+MALFORMED RECORDS SKIPPED
+------------------------------------------------------------
+Record #25: missing field 'username'
+Record #26: invalid IP address '999.1.1.1'
+Record #27: unknown status 'MAYBE'
+Record #28: record is not a dictionary
+
+LIMITATIONS
+------------------------------------------------------------
+- Uses fictional sample records only; it does not read real logs.
+- Does not monitor live systems or detect real attackers.
+- Has no time window, so failures spread over days count together.
+- Fixed thresholds can cause false positives and false negatives.
+- Does not use IP reputation, geolocation, or account lockout data.
+- An alert is a lead for review, not proof of malicious activity.
+
+Data source: Fictional practice records.
+For educational use only.
+============================================================

@@ -1,0 +1,3 @@
+# No external packages are required.
+# This project uses only Python's standard library (ipaddress, pathlib, unittest, tempfile).
+# Python 3.8 or newer is recommended.
